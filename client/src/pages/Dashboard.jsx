@@ -4,11 +4,11 @@ import axios from 'axios';
 import { QRCodeSVG } from 'qrcode.react';
 import * as THREE from 'three';
 import NET from 'vanta/src/vanta.net';
-import { 
-  User, 
-  Star, 
-  Plus, 
-  Award, 
+import {
+  User,
+  Star,
+  Plus,
+  Award,
   Home,
   Phone,
   MapPin,
@@ -97,7 +97,7 @@ const GalleryCard = ({ image, title, subtitle, delay }) => {
       }}
     >
       <img src={image} alt={title} style={{ width: '100%', height: '220px', objectFit: 'cover', display: 'block', transition: 'all 0.3s ease' }} />
-      
+
       <div style={{
         position: 'absolute',
         top: '12px', right: '12px',
@@ -331,7 +331,7 @@ const ContactAddressCard = ({ delay }) => {
         <div style={{ color: '#555555', fontSize: '11px', letterSpacing: '0.2em', marginBottom: '6px' }}>SERVICE AREA</div>
         <div style={{ color: '#ffffff', fontSize: '22px', fontWeight: 700, marginBottom: '4px' }}>Koramangala, Bengaluru</div>
         <div style={{ color: '#888888', fontSize: '13px', lineHeight: 1.5 }}>
-          Serving HSR Layout, Indiranagar,<br/>
+          Serving HSR Layout, Indiranagar,<br />
           Whitefield & surrounding areas
         </div>
       </div>
@@ -408,7 +408,7 @@ const ContactProfileCard = ({ delay, username }) => {
           {profileUrl}
         </div>
         <div style={{ color: '#888888', fontSize: '13px' }}>
-          Share this link with clients<br/>
+          Share this link with clients<br />
           to showcase your verified portfolio
         </div>
       </div>
@@ -450,33 +450,33 @@ const ContactProfileCard = ({ delay, username }) => {
 };
 
 const getBadge = (jobs) => {
-  if (jobs >= 300) return { 
-    label: 'PLATINUM', 
-    color: '#E5E4E2', 
+  if (jobs >= 300) return {
+    label: 'PLATINUM',
+    color: '#E5E4E2',
     glow: 'rgba(229,228,226,0.4)',
     bg: 'rgba(229,228,226,0.08)',
     border: 'rgba(229,228,226,0.3)',
     emoji: '💎'
   }
-  if (jobs >= 151) return { 
-    label: 'GOLD', 
-    color: '#FFD700', 
+  if (jobs >= 151) return {
+    label: 'GOLD',
+    color: '#FFD700',
     glow: 'rgba(255,215,0,0.4)',
     bg: 'rgba(255,215,0,0.08)',
     border: 'rgba(255,215,0,0.3)',
     emoji: '🥇'
   }
-  if (jobs >= 101) return { 
-    label: 'SILVER', 
-    color: '#C0C0C0', 
+  if (jobs >= 101) return {
+    label: 'SILVER',
+    color: '#C0C0C0',
     glow: 'rgba(192,192,192,0.4)',
     bg: 'rgba(192,192,192,0.08)',
     border: 'rgba(192,192,192,0.3)',
     emoji: '🥈'
   }
-  if (jobs >= 50) return { 
-    label: 'BRONZE', 
-    color: '#CD7F32', 
+  if (jobs >= 50) return {
+    label: 'BRONZE',
+    color: '#CD7F32',
     glow: 'rgba(205,127,50,0.4)',
     bg: 'rgba(205,127,50,0.08)',
     border: 'rgba(205,127,50,0.3)',
@@ -573,7 +573,7 @@ const MilestoneCard = ({ badge, activeSection, jobs, username }) => {
         {/* Tier 1: Bronze */}
         <div style={{
           padding: '20px', borderRadius: '10px', textAlign: 'center', transition: 'all 0.3s ease',
-          background: bronze === 'current' ? 'rgba(205,127,50,0.1)' : 'rgba(205,127,50,0.06)', 
+          background: bronze === 'current' ? 'rgba(205,127,50,0.1)' : 'rgba(205,127,50,0.06)',
           border: bronze === 'current' ? '2px solid #CD7F32' : '1px solid rgba(205,127,50,0.2)',
           opacity: bronze === 'locked' ? 0.5 : 1
         }}>
@@ -587,7 +587,7 @@ const MilestoneCard = ({ badge, activeSection, jobs, username }) => {
             <>
               <div style={{ color: '#888888', fontSize: '11px', marginTop: '12px', marginBottom: '4px' }}>{jobs} / 100 jobs</div>
               <div style={{ height: '4px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', overflow: 'hidden' }}>
-                <div style={{ width: `${(jobs/100)*100}%`, height: '100%', background: '#CD7F32', borderRadius: '999px' }} />
+                <div style={{ width: `${(jobs / 100) * 100}%`, height: '100%', background: '#CD7F32', borderRadius: '999px' }} />
               </div>
             </>
           )}
@@ -596,7 +596,7 @@ const MilestoneCard = ({ badge, activeSection, jobs, username }) => {
         {/* Tier 2: Silver */}
         <div style={{
           padding: '20px', borderRadius: '10px', textAlign: 'center', transition: 'all 0.3s ease',
-          background: silver === 'current' ? 'rgba(192,192,192,0.1)' : 'rgba(192,192,192,0.04)', 
+          background: silver === 'current' ? 'rgba(192,192,192,0.1)' : 'rgba(192,192,192,0.04)',
           border: silver === 'current' ? '2px solid #C0C0C0' : '1px solid rgba(192,192,192,0.2)',
           opacity: silver === 'locked' ? 0.5 : 1
         }}>
@@ -610,7 +610,7 @@ const MilestoneCard = ({ badge, activeSection, jobs, username }) => {
             <>
               <div style={{ color: '#888888', fontSize: '11px', marginTop: '12px', marginBottom: '4px' }}>{jobs - 100} / 50 jobs</div>
               <div style={{ height: '4px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', overflow: 'hidden' }}>
-                <div style={{ width: `${((jobs-100)/50)*100}%`, height: '100%', background: '#C0C0C0', borderRadius: '999px' }} />
+                <div style={{ width: `${((jobs - 100) / 50) * 100}%`, height: '100%', background: '#C0C0C0', borderRadius: '999px' }} />
               </div>
             </>
           )}
@@ -619,7 +619,7 @@ const MilestoneCard = ({ badge, activeSection, jobs, username }) => {
         {/* Tier 3: Gold */}
         <div style={{
           padding: '20px', borderRadius: '10px', textAlign: 'center', transition: 'all 0.3s ease',
-          background: gold === 'current' ? 'rgba(255,215,0,0.1)' : 'rgba(255,215,0,0.04)', 
+          background: gold === 'current' ? 'rgba(255,215,0,0.1)' : 'rgba(255,215,0,0.04)',
           border: gold === 'current' ? '2px solid #FFD700' : '1px solid rgba(255,215,0,0.2)',
           opacity: gold === 'locked' ? 0.5 : 1
         }}>
@@ -633,7 +633,7 @@ const MilestoneCard = ({ badge, activeSection, jobs, username }) => {
             <>
               <div style={{ color: '#888888', fontSize: '11px', marginTop: '12px', marginBottom: '4px' }}>{jobs - 150} / 50 jobs</div>
               <div style={{ height: '4px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', overflow: 'hidden' }}>
-                <div style={{ width: `${((jobs-150)/50)*100}%`, height: '100%', background: '#FFD700', borderRadius: '999px' }} />
+                <div style={{ width: `${((jobs - 150) / 50) * 100}%`, height: '100%', background: '#FFD700', borderRadius: '999px' }} />
               </div>
             </>
           )}
@@ -642,7 +642,7 @@ const MilestoneCard = ({ badge, activeSection, jobs, username }) => {
         {/* Tier 4: Platinum */}
         <div style={{
           padding: '20px', borderRadius: '10px', textAlign: 'center', transition: 'all 0.3s ease',
-          background: plat === 'current' ? 'rgba(229,228,226,0.1)' : 'rgba(229,228,226,0.04)', 
+          background: plat === 'current' ? 'rgba(229,228,226,0.1)' : 'rgba(229,228,226,0.04)',
           border: plat === 'current' ? '2px solid #E5E4E2' : '1px solid rgba(229,228,226,0.2)',
           opacity: plat === 'locked' ? 0.5 : 1
         }}>
@@ -662,11 +662,11 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const vantaRef = useRef(null);
   const [vantaEffect, setVantaEffect] = useState(null);
-  
+
   const [activeSection, setActiveSection] = useState(null);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [logoutHovered, setLogoutHovered] = useState(false);
-  
+
   const [jobTitle, setJobTitle] = useState('');
   const [clientName, setClientName] = useState('');
   const [jobDate, setJobDate] = useState('');
@@ -685,8 +685,8 @@ const Dashboard = () => {
       const token = localStorage.getItem('token')
       if (!token) return
       const res = await axios.get(
-        'http://localhost:5000/api/appointments/notifications',
-        { headers: { Authorization: `Bearer ${token}` }}
+        'https://gigfolio-production.up.railway.app/api/appointments/notifications',
+        { headers: { Authorization: `Bearer ${token}` } }
       )
       const data = res.data || []
       setNotifications(data)
@@ -737,18 +737,18 @@ const Dashboard = () => {
       const res = await axios.get('http://10.11.242.44:5000/api/jobs/myjobs', {
         headers: { Authorization: `Bearer ${token}` }
       });
-      
+
       setAllJobs(res.data);
       const jobsWithReviews = res.data.filter(job => job.tokenUsed && job.review);
-      
+
       let totalRating = 0;
       let counts = [0, 0, 0, 0, 0];
-      
+
       const mappedReviews = jobsWithReviews.map(job => {
         const rating = job.review.rating || 0;
         totalRating += rating;
-        if(rating >= 1 && rating <= 5) counts[rating - 1]++;
-        
+        if (rating >= 1 && rating <= 5) counts[rating - 1]++;
+
         return {
           id: job._id,
           name: job.review.reviewerName,
@@ -761,24 +761,24 @@ const Dashboard = () => {
           hash: job.review.blockchainHash
         };
       });
-      
+
       setReviewsList(mappedReviews);
-      
+
       const total = mappedReviews.length;
       const average = total > 0 ? (totalRating / total).toFixed(1) : 0;
-      
+
       setReviewStats({
         average,
         total,
         distribution: [
-          { label: '5★', width: total > 0 ? `${(counts[4]/total)*100}%` : '0%' },
-          { label: '4★', width: total > 0 ? `${(counts[3]/total)*100}%` : '0%' },
-          { label: '3★', width: total > 0 ? `${(counts[2]/total)*100}%` : '0%' },
-          { label: '2★', width: total > 0 ? `${(counts[1]/total)*100}%` : '0%' },
-          { label: '1★', width: total > 0 ? `${(counts[0]/total)*100}%` : '0%' }
+          { label: '5★', width: total > 0 ? `${(counts[4] / total) * 100}%` : '0%' },
+          { label: '4★', width: total > 0 ? `${(counts[3] / total) * 100}%` : '0%' },
+          { label: '3★', width: total > 0 ? `${(counts[2] / total) * 100}%` : '0%' },
+          { label: '2★', width: total > 0 ? `${(counts[1] / total) * 100}%` : '0%' },
+          { label: '1★', width: total > 0 ? `${(counts[0] / total) * 100}%` : '0%' }
         ]
       });
-      
+
     } catch (err) {
       console.error('Error fetching jobs for reviews', err);
     }
@@ -812,7 +812,7 @@ const Dashboard = () => {
     setAadhaarMsg('');
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://10.11.242.44:5000/api/verify/aadhaar', 
+      const res = await axios.post('http://10.11.242.44:5000/api/verify/aadhaar',
         { aadhaarNumber: aadhaarNum, fullName },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -830,7 +830,7 @@ const Dashboard = () => {
     setLicenseMsg('');
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://10.11.242.44:5000/api/verify/license', 
+      const res = await axios.post('http://10.11.242.44:5000/api/verify/license',
         { licenseNumber: licenseNum },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -848,7 +848,7 @@ const Dashboard = () => {
     setPoliceMsg('');
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://10.11.242.44:5000/api/verify/police', 
+      const res = await axios.post('http://10.11.242.44:5000/api/verify/police',
         { reportNumber: policeRef || 'AUTO' },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -866,7 +866,7 @@ const Dashboard = () => {
     setGeneratingJob(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/jobs/create', {
+      const res = await axios.post('http://gigfolio-production.up.railway.app/api/jobs/create', {
         jobTitle, clientName, jobDate, amount, description
       }, {
         headers: { Authorization: `Bearer ${token}` }
@@ -889,9 +889,9 @@ const Dashboard = () => {
     setJobTitle(''); setClientName(''); setJobDate(''); setAmount(''); setDescription('');
     setGeneratedJob(null);
   };
-  
+
   const username = localStorage.getItem('username');
-  
+
   // Calculate dynamic mock base jobs for this user (99-301)
   let hash = 0;
   if (username) {
@@ -968,10 +968,10 @@ const Dashboard = () => {
       background: '#0a0a0a',
       position: 'relative'
     }}>
-      
+
       {/* Vanta background */}
-      <div 
-        ref={vantaRef} 
+      <div
+        ref={vantaRef}
         style={{
           position: 'fixed',
           top: 0,
@@ -979,11 +979,11 @@ const Dashboard = () => {
           width: '100%',
           height: '100%',
           zIndex: 0
-        }} 
+        }}
       />
-      
+
       {/* Dark overlay */}
-      <div 
+      <div
         style={{
           position: 'fixed',
           top: 0,
@@ -993,7 +993,7 @@ const Dashboard = () => {
           zIndex: 1,
           background: 'rgba(0,0,0,0.75)',
           pointerEvents: 'none'
-        }} 
+        }}
       />
 
       {/* SIDEBAR */}
@@ -1011,7 +1011,7 @@ const Dashboard = () => {
         flexDirection: 'column',
         padding: '32px 16px'
       }}>
-        
+
         {/* TOP - Logo */}
         <div style={{
           color: '#00ff88',
@@ -1094,10 +1094,10 @@ const Dashboard = () => {
                 </div>
                 {item.label}
                 {item.id === 'notifications' && unreadCount > 0 && (
-                  <span style={{ 
-                    marginLeft: 'auto', background: 'rgba(255,68,68,0.15)', 
-                    color: '#ff4444', padding: '2px 8px', borderRadius: '10px', 
-                    fontSize: '10px', fontWeight: 700 
+                  <span style={{
+                    marginLeft: 'auto', background: 'rgba(255,68,68,0.15)',
+                    color: '#ff4444', padding: '2px 8px', borderRadius: '10px',
+                    fontSize: '10px', fontWeight: 700
                   }}>
                     {unreadCount}
                   </span>
@@ -1177,7 +1177,7 @@ const Dashboard = () => {
         justifyContent: (activeSection === 'profile' || activeSection === 'reviews' || activeSection === 'certificates' || activeSection === 'contact' || activeSection === 'addjob' || activeSection === 'verification' || activeSection === 'notifications') ? 'flex-start' : 'center'
       }}>
         <style>
-        {`
+          {`
           @keyframes slideUpFade {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
@@ -1195,7 +1195,7 @@ const Dashboard = () => {
           }
         `}
         </style>
-        
+
         {activeSection === 'notifications' && (
           <div style={{ width: '100%' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px' }}>
@@ -1209,13 +1209,13 @@ const Dashboard = () => {
                 }}>Notifications</div>
                 <div style={{ color: '#888', fontSize: '15px' }}>Appointment requests from clients</div>
               </div>
-              
+
               {unreadCount > 0 && (
-                <button 
+                <button
                   onClick={async () => {
                     const token = localStorage.getItem('token')
-                    await Promise.all(notifications.filter(n => !n.read).map(n => 
-                      axios.put(`http://localhost:5000/api/appointments/read/${n._id}`, {}, {
+                    await Promise.all(notifications.filter(n => !n.read).map(n =>
+                      axios.put(`http://gigfolio-production.up.railway.app/api/appointments/read/${n._id}`, {}, {
                         headers: { Authorization: `Bearer ${token}` }
                       })
                     ))
@@ -1247,14 +1247,14 @@ const Dashboard = () => {
                     animationDelay: `${i * 0.1}s`, opacity: 0,
                     boxShadow: !n.read ? '0 0 20px rgba(0,255,136,0.05)' : 'none'
                   }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.borderColor = 'rgba(0,255,136,0.25)'
-                    e.currentTarget.style.transform = 'translateX(4px)'
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.borderColor = n.read ? 'rgba(255,255,255,0.08)' : 'rgba(0,255,136,0.2)'
-                    e.currentTarget.style.transform = 'translateX(0)'
-                  }}>
+                    onMouseEnter={e => {
+                      e.currentTarget.style.borderColor = 'rgba(0,255,136,0.25)'
+                      e.currentTarget.style.transform = 'translateX(4px)'
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.borderColor = n.read ? 'rgba(255,255,255,0.08)' : 'rgba(0,255,136,0.2)'
+                      e.currentTarget.style.transform = 'translateX(0)'
+                    }}>
                     {!n.read && (
                       <div style={{
                         position: 'absolute', top: '20px', right: '20px',
@@ -1281,7 +1281,7 @@ const Dashboard = () => {
 
                       <div style={{ textAlign: 'right' }}>
                         <div style={{ color: '#555', fontSize: '12px', marginBottom: '8px' }}>
-                          {new Date(n.createdAt).toLocaleDateString()} {new Date(n.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                          {new Date(n.createdAt).toLocaleDateString()} {new Date(n.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </div>
                         <div style={{
                           background: n.status === 'pending' ? 'rgba(255,184,0,0.08)' : n.status === 'accepted' ? 'rgba(0,255,136,0.08)' : 'rgba(255,68,68,0.08)',
@@ -1318,13 +1318,13 @@ const Dashboard = () => {
 
                     {n.status === 'pending' && (
                       <div style={{ display: 'flex', gap: '12px' }}>
-                        <button 
+                        <button
                           onClick={async () => {
                             const token = localStorage.getItem('token')
-                            await axios.put(`http://localhost:5000/api/appointments/status/${n._id}`, { status: 'accepted' }, {
+                            await axios.put(`http://gigfolio-production.up.railway.app/api/appointments/status/${n._id}`, { status: 'accepted' }, {
                               headers: { Authorization: `Bearer ${token}` }
                             })
-                            await axios.put(`http://localhost:5000/api/appointments/read/${n._id}`, {}, {
+                            await axios.put(`http://gigfolio-production.up.railway.app/api/appointments/read/${n._id}`, {}, {
                               headers: { Authorization: `Bearer ${token}` }
                             })
                             fetchNotifications()
@@ -1336,13 +1336,13 @@ const Dashboard = () => {
                           onMouseEnter={e => e.currentTarget.style.background = 'rgba(0,255,136,0.2)'}
                           onMouseLeave={e => e.currentTarget.style.background = 'rgba(0,255,136,0.1)'}
                         >✓ Accept</button>
-                        <button 
+                        <button
                           onClick={async () => {
                             const token = localStorage.getItem('token')
-                            await axios.put(`http://localhost:5000/api/appointments/status/${n._id}`, { status: 'rejected' }, {
+                            await axios.put(`http://gigfolio-production.up.railway.app/api/appointments/status/${n._id}`, { status: 'rejected' }, {
                               headers: { Authorization: `Bearer ${token}` }
                             })
-                            await axios.put(`http://localhost:5000/api/appointments/read/${n._id}`, {}, {
+                            await axios.put(`http://gigfolio-production.up.railway.app/api/appointments/read/${n._id}`, {}, {
                               headers: { Authorization: `Bearer ${token}` }
                             })
                             fetchNotifications()
@@ -1502,9 +1502,9 @@ const Dashboard = () => {
                 <div style={{ color: '#00ff88', fontSize: '10px', letterSpacing: '0.3em', marginBottom: '16px' }}>
                   TRUST ORB
                 </div>
-                
+
                 <TrustOrb status={verifyData?.overallStatus || 'none'} />
-                
+
                 <div style={{ textAlign: 'center', marginTop: '16px' }}>
                   <div style={{
                     color: verifyData?.overallStatus === 'verified' ? '#00ff88' : verifyData?.overallStatus === 'partial' ? '#FFB800' : '#ff4444',
@@ -1535,7 +1535,7 @@ const Dashboard = () => {
                   </div>
                 )}
               </ProfileCard>
-              
+
               <MilestoneCard badge={badge} activeSection={activeSection} jobs={totalJobsCompleted} username={username} />
             </div>
 
@@ -1622,10 +1622,10 @@ const Dashboard = () => {
               )}
               {reviewsList.map((review, index) => (
                 <ReviewCard key={review.id} delay={`${0.1 * (index + 1)}s`}>
-                  
+
                   {/* CARD TOP ROW */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                    
+
                     {/* Left side */}
                     <div style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
                       <div style={{
@@ -1736,17 +1736,17 @@ const Dashboard = () => {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '48px', maxWidth: '900px' }}>
-              <GalleryCard 
-                image={anti1} 
-                title="Electrical Panel Installation" 
-                subtitle="Completed — March 2024" 
-                delay="0.1s" 
+              <GalleryCard
+                image={anti1}
+                title="Electrical Panel Installation"
+                subtitle="Completed — March 2024"
+                delay="0.1s"
               />
-              <GalleryCard 
-                image={anti2} 
-                title="Full House Wiring Project" 
-                subtitle="Completed — January 2024" 
-                delay="0.2s" 
+              <GalleryCard
+                image={anti2}
+                title="Full House Wiring Project"
+                subtitle="Completed — January 2024"
+                delay="0.2s"
               />
             </div>
 
@@ -1847,7 +1847,7 @@ const Dashboard = () => {
                   <label style={{ color: '#888888', fontSize: '12px', letterSpacing: '0.05em', marginBottom: '6px', display: 'block' }}>JOB DESCRIPTION</label>
                   <textarea required placeholder="Brief description of work done..." value={description} onChange={e => setDescription(e.target.value)} style={{ width: '100%', marginBottom: '16px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', padding: '14px 16px', color: '#ffffff', fontSize: '14px', outline: 'none', transition: 'all 0.3s ease', height: '80px', resize: 'vertical' }} onFocus={e => { e.currentTarget.style.borderColor = '#00ff88'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(0,255,136,0.1)'; }} onBlur={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.boxShadow = 'none'; }} />
 
-                  <button type="submit" disabled={generatingJob || generatedJob} style={{ width: '100%', background: '#00ff88', color: '#0a0a0a', fontWeight: 700, fontSize: '15px', padding: '14px', borderRadius: '8px', border: 'none', cursor: (generatingJob || generatedJob) ? 'default' : 'pointer', transition: 'all 0.3s ease', opacity: generatingJob ? 0.7 : 1 }} onMouseEnter={e => { if(!generatingJob && !generatedJob) { e.currentTarget.style.boxShadow = '0 0 30px rgba(0,255,136,0.4)'; e.currentTarget.style.transform = 'translateY(-2px)'; } }} onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                  <button type="submit" disabled={generatingJob || generatedJob} style={{ width: '100%', background: '#00ff88', color: '#0a0a0a', fontWeight: 700, fontSize: '15px', padding: '14px', borderRadius: '8px', border: 'none', cursor: (generatingJob || generatedJob) ? 'default' : 'pointer', transition: 'all 0.3s ease', opacity: generatingJob ? 0.7 : 1 }} onMouseEnter={e => { if (!generatingJob && !generatedJob) { e.currentTarget.style.boxShadow = '0 0 30px rgba(0,255,136,0.4)'; e.currentTarget.style.transform = 'translateY(-2px)'; } }} onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}>
                     {generatingJob ? 'Generating QR Code...' : 'Generate QR Code'}
                   </button>
                 </form>
@@ -1866,9 +1866,9 @@ const Dashboard = () => {
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ color: '#00ff88', fontSize: '18px', fontWeight: 700, marginBottom: '8px' }}>QR Code Generated! 🎉</div>
                     <div style={{ color: '#888888', fontSize: '13px', marginBottom: '24px' }}>Share this QR with your client to collect a verified review</div>
-                    
+
                     <div style={{ padding: '20px', background: '#ffffff', borderRadius: '12px', display: 'inline-block', boxShadow: '0 0 40px rgba(0,255,136,0.2)' }}>
-                      <QRCodeSVG value={`http://10.11.242.44:5173/review/${generatedJob.reviewToken}`} size={200} bgColor="#ffffff" fgColor="#0a0a0a" level="H" />
+                      <QRCodeSVG value={`https://your-vercel-app.vercel.app/review/${generatedJob.reviewToken}`} size={200} bgColor="#ffffff" fgColor="#0a0a0a" level="H" />
                     </div>
 
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '16px', justifyContent: 'center' }}>
@@ -1979,7 +1979,7 @@ const Dashboard = () => {
 
                 {/* 3 VERIFICATION CARDS */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  
+
                   {/* CARD 1 — Aadhaar */}
                   <div style={{ background: 'rgba(10,10,10,0.8)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '28px 32px', backdropFilter: 'blur(12px)', transition: 'all 0.3s ease', animation: 'slideUpFade 0.6s ease forwards', animationDelay: '0.1s', opacity: 0 }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
@@ -2131,13 +2131,13 @@ const Dashboard = () => {
                 {/* PROGRESS TRACKER */}
                 <div style={{ background: 'rgba(10,10,10,0.8)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '24px 32px', marginTop: '24px' }}>
                   <div style={{ color: '#ffffff', fontSize: '16px', fontWeight: 700, marginBottom: '20px' }}>Verification Progress</div>
-                  
+
                   {(() => {
                     let completedCount = 0;
                     if (verifyData.aadhaar.status === 'verified') completedCount++;
                     if (verifyData.drivingLicense.status === 'verified') completedCount++;
                     if (verifyData.policeVerification.status === 'clear') completedCount++;
-                    
+
                     return (
                       <>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -2174,7 +2174,7 @@ const Dashboard = () => {
                           {completedCount}/3 verifications complete
                         </div>
                         <div style={{ height: '6px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', overflow: 'hidden' }}>
-                          <div style={{ width: `${(completedCount/3)*100}%`, height: '100%', background: 'linear-gradient(90deg, #00ff88, #7B2FBE)', borderRadius: '999px', transition: 'width 1s ease' }}></div>
+                          <div style={{ width: `${(completedCount / 3) * 100}%`, height: '100%', background: 'linear-gradient(90deg, #00ff88, #7B2FBE)', borderRadius: '999px', transition: 'width 1s ease' }}></div>
                         </div>
                       </>
                     );
@@ -2182,7 +2182,7 @@ const Dashboard = () => {
                 </div>
               </>
             )}
-            
+
             <style>
               {`
                 @keyframes spin {
