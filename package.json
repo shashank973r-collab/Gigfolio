@@ -1,0 +1,14 @@
+{
+  "name": "trustwork-monorepo",
+  "version": "1.0.0",
+  "description": "Trustwork Project",
+  "main": "index.js",
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && node server.js",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
