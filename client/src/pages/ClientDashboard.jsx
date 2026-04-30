@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import * as THREE from 'three';
 import NET from 'vanta/src/vanta.net';
-import { 
-  Search, 
-  Briefcase, 
-  Star, 
-  Bell, 
-  Home, 
-  Users, 
-  Shield, 
+import {
+  Search,
+  Briefcase,
+  Star,
+  Bell,
+  Home,
+  Users,
+  Shield,
   LogOut,
   ChevronRight,
   History
@@ -82,12 +82,12 @@ const ClientDashboard = () => {
     try {
       const token = localStorage.getItem('clientToken')
       await axios.post(
-        'http://localhost:5000/api/appointments/book',
-        { 
+        'https://gigfolio-production.up.railway.app//api/appointments/book',
+        {
           workerUsername: selectedWorker.username,
-          ...bookingForm 
+          ...bookingForm
         },
-        { headers: { Authorization: `Bearer ${token}` }}
+        { headers: { Authorization: `Bearer ${token}` } }
       )
       setBookingSuccess(true)
     } catch (err) {
@@ -108,7 +108,7 @@ const ClientDashboard = () => {
     setLoadingWorkers(true)
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/workers/search?query=${query}`
+        `https://gigfolio-production.up.railway.app//api/workers/search?query=${query}`
       )
       setWorkers(res.data)
     } catch (err) {
@@ -319,7 +319,7 @@ const ClientDashboard = () => {
       {/* Main Content */}
       <main style={{ flex: 1, marginLeft: '280px', padding: '40px 60px', position: 'relative', zIndex: 1 }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          
+
 
           {activeSection === 'welcome' && (
             <>
@@ -368,17 +368,19 @@ const ClientDashboard = () => {
               border: '1px solid rgba(255,255,255,0.05)',
               marginTop: '20px'
             }}>
-              <p style={{color:'#00B4D8', fontSize:11, letterSpacing:'0.3em', marginBottom:8}}>
+              <p style={{ color: '#00B4D8', fontSize: 11, letterSpacing: '0.3em', marginBottom: 8 }}>
                 DISCOVER
               </p>
-              <h1 style={{fontSize:42, fontWeight:800,
-                background:'linear-gradient(90deg,#00B4D8,#fff)',
-                WebkitBackgroundClip:'text',
-                WebkitTextFillColor:'transparent',
-                marginBottom:8}}>
+              <h1 style={{
+                fontSize: 42, fontWeight: 800,
+                background: 'linear-gradient(90deg,#00B4D8,#fff)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginBottom: 8
+              }}>
                 Find Workers
               </h1>
-              <p style={{color:'#888', fontSize:15, marginBottom:32}}>
+              <p style={{ color: '#888', fontSize: 15, marginBottom: 32 }}>
                 Search verified gig workers in your area
               </p>
 
@@ -393,13 +395,13 @@ const ClientDashboard = () => {
                     fetchWorkers(e.target.value)
                   }}
                   style={{
-                    width:'100%',
-                    background:'rgba(255,255,255,0.05)',
-                    border:'1px solid rgba(255,255,255,0.1)',
-                    borderRadius:12, padding:'16px 20px 16px 50px',
-                    color:'#ffffff', fontSize:16,
-                    outline:'none',
-                    display:'block',
+                    width: '100%',
+                    background: 'rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    borderRadius: 12, padding: '16px 20px 16px 50px',
+                    color: '#ffffff', fontSize: 16,
+                    outline: 'none',
+                    display: 'block',
                     transition: 'all 0.3s ease'
                   }}
                   onFocus={(e) => e.target.style.borderColor = '#00B4D8'}
@@ -407,59 +409,59 @@ const ClientDashboard = () => {
                 />
               </div>
 
-              <p style={{color:'#555', fontSize:13, marginBottom:20}}>
+              <p style={{ color: '#555', fontSize: 13, marginBottom: 20 }}>
                 {workers.length} workers found
               </p>
 
               {loadingWorkers && (
-                <p style={{color:'#888'}}>Loading...</p>
+                <p style={{ color: '#888' }}>Loading...</p>
               )}
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '20px' }}>
                 {workers.map((worker, i) => (
                   <div key={i} style={{
-                    background:'rgba(10,10,10,0.8)',
-                    border:'1px solid rgba(255,255,255,0.08)',
-                    borderRadius:16, padding:'24px',
-                    display:'flex',
-                    alignItems:'center',
-                    justifyContent:'space-between',
-                    backdropFilter:'blur(12px)',
+                    background: 'rgba(10,10,10,0.8)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    borderRadius: 16, padding: '24px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    backdropFilter: 'blur(12px)',
                     transition: 'all 0.3s ease'
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(20,20,20,0.9)';
-                    e.currentTarget.style.borderColor = 'rgba(0,180,216,0.2)';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(10,10,10,0.8)';
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}>
-                    <div style={{display:'flex', alignItems:'center', gap:16}}>
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'rgba(20,20,20,0.9)';
+                      e.currentTarget.style.borderColor = 'rgba(0,180,216,0.2)';
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(10,10,10,0.8)';
+                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                      e.currentTarget.style.transform = 'translateY(0)';
+                    }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
                       <div style={{
-                        width:56, height:56,
-                        borderRadius:'50%',
-                        background:'linear-gradient(135deg,#00ff88,#7B2FBE)',
-                        display:'flex', alignItems:'center',
-                        justifyContent:'center',
-                        fontSize:22, fontWeight:800,
-                        color:'#0a0a0a'
+                        width: 56, height: 56,
+                        borderRadius: '50%',
+                        background: 'linear-gradient(135deg,#00ff88,#7B2FBE)',
+                        display: 'flex', alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 22, fontWeight: 800,
+                        color: '#0a0a0a'
                       }}>
                         {worker.username?.[0]?.toUpperCase()}
                       </div>
                       <div>
-                        <p style={{color:'#fff', fontSize:18, fontWeight:700, margin:0}}>
+                        <p style={{ color: '#fff', fontSize: 18, fontWeight: 700, margin: 0 }}>
                           {worker.username}
                         </p>
-                        <p style={{color:'#888', fontSize:13, margin:'2px 0'}}>
+                        <p style={{ color: '#888', fontSize: 13, margin: '2px 0' }}>
                           {worker.jobTitle || 'Gig Worker'}
                         </p>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
                           <div style={{ display: 'flex', gap: '2px' }}>
                             {[...Array(5)].map((_, starI) => (
-                              <Star key={starI} size={10} style={{ 
+                              <Star key={starI} size={10} style={{
                                 fill: starI < Math.floor(worker.rating || 0) ? "#FFB800" : "none",
                                 color: starI < Math.floor(worker.rating || 0) ? "#FFB800" : "rgba(255,255,255,0.1)"
                               }} />
@@ -473,15 +475,15 @@ const ClientDashboard = () => {
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '10px' }}>
                       <div style={{
-                        background:'rgba(0,255,136,0.08)',
-                        border:'1px solid rgba(0,255,136,0.2)',
-                        borderRadius:20, padding:'4px 12px',
-                        color:'#00ff88', fontSize:11,
-                        fontWeight:600, letterSpacing: '0.05em'
+                        background: 'rgba(0,255,136,0.08)',
+                        border: '1px solid rgba(0,255,136,0.2)',
+                        borderRadius: 20, padding: '4px 12px',
+                        color: '#00ff88', fontSize: 11,
+                        fontWeight: 600, letterSpacing: '0.05em'
                       }}>
                         ✓ VERIFIED
                       </div>
-                      <button 
+                      <button
                         onClick={() => {
                           setSelectedWorker(worker)
                           setShowBookingModal(true)
@@ -515,7 +517,7 @@ const ClientDashboard = () => {
               </div>
 
               {!loadingWorkers && workers.length === 0 && (
-                <p style={{color:'#555', textAlign:'center', marginTop:60, fontSize:16}}>
+                <p style={{ color: '#555', textAlign: 'center', marginTop: 60, fontSize: 16 }}>
                   No workers found for "{searchQuery}"
                 </p>
               )}
@@ -531,17 +533,19 @@ const ClientDashboard = () => {
               border: '1px solid rgba(255,255,255,0.05)',
               marginTop: '20px'
             }}>
-              <p style={{color:'#00B4D8', fontSize:11, letterSpacing:'0.3em', marginBottom:8}}>
+              <p style={{ color: '#00B4D8', fontSize: 11, letterSpacing: '0.3em', marginBottom: 8 }}>
                 WORK HISTORY
               </p>
-              <h1 style={{fontSize:42, fontWeight:800,
-                background:'linear-gradient(90deg, #00B4D8, #ffffff)',
-                WebkitBackgroundClip:'text',
-                WebkitTextFillColor:'transparent',
-                marginBottom:8}}>
+              <h1 style={{
+                fontSize: 42, fontWeight: 800,
+                background: 'linear-gradient(90deg, #00B4D8, #ffffff)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginBottom: 8
+              }}>
                 History
               </h1>
-              <p style={{color:'#888888', fontSize:15, marginBottom:40}}>
+              <p style={{ color: '#888888', fontSize: 15, marginBottom: 40 }}>
                 All your past job engagements
               </p>
 
@@ -558,16 +562,16 @@ const ClientDashboard = () => {
                     animationDelay: `${index * 0.1}s`,
                     opacity: 0,
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(0,180,216,0.3)';
-                    e.currentTarget.style.transform = 'translateX(6px)';
-                    e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.4)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-                    e.currentTarget.style.transform = 'translateX(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}>
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = 'rgba(0,180,216,0.3)';
+                      e.currentTarget.style.transform = 'translateX(6px)';
+                      e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.4)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                      e.currentTarget.style.transform = 'translateX(0)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}>
                     {/* CARD TOP ROW */}
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start' }}>
@@ -590,7 +594,7 @@ const ClientDashboard = () => {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div style={{
                         background: 'rgba(0,255,136,0.08)', border: '1px solid rgba(0,255,136,0.2)',
                         borderRadius: '20px', padding: '4px 14px', color: '#00ff88', fontSize: '12px', fontWeight: 600
@@ -658,7 +662,7 @@ const ClientDashboard = () => {
             borderRadius: '16px', padding: '40px', maxWidth: '500px', width: '90%',
             position: 'relative'
           }}>
-            <button 
+            <button
               onClick={() => {
                 setShowBookingModal(false)
                 setBookingSuccess(false)
@@ -703,7 +707,7 @@ const ClientDashboard = () => {
                     <textarea
                       placeholder="Describe the work you need..."
                       value={bookingForm.jobDescription}
-                      onChange={e => setBookingForm({...bookingForm, jobDescription: e.target.value})}
+                      onChange={e => setBookingForm({ ...bookingForm, jobDescription: e.target.value })}
                       style={{
                         width: '100%', height: '80px', background: 'rgba(255,255,255,0.04)',
                         border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px',
@@ -721,7 +725,7 @@ const ClientDashboard = () => {
                         type="date"
                         min={new Date().toISOString().split('T')[0]}
                         value={bookingForm.preferredDate}
-                        onChange={e => setBookingForm({...bookingForm, preferredDate: e.target.value})}
+                        onChange={e => setBookingForm({ ...bookingForm, preferredDate: e.target.value })}
                         style={{
                           width: '100%', background: 'rgba(255,255,255,0.04)',
                           border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px',
@@ -736,7 +740,7 @@ const ClientDashboard = () => {
                       <input
                         type="time"
                         value={bookingForm.preferredTime}
-                        onChange={e => setBookingForm({...bookingForm, preferredTime: e.target.value})}
+                        onChange={e => setBookingForm({ ...bookingForm, preferredTime: e.target.value })}
                         style={{
                           width: '100%', background: 'rgba(255,255,255,0.04)',
                           border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px',
@@ -753,7 +757,7 @@ const ClientDashboard = () => {
                     <textarea
                       placeholder="Full address for the job..."
                       value={bookingForm.address}
-                      onChange={e => setBookingForm({...bookingForm, address: e.target.value})}
+                      onChange={e => setBookingForm({ ...bookingForm, address: e.target.value })}
                       style={{
                         width: '100%', height: '60px', background: 'rgba(255,255,255,0.04)',
                         border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px',
@@ -790,7 +794,7 @@ const ClientDashboard = () => {
                 }}>✓</div>
                 <h2 style={{ color: '#ffffff', fontSize: '22px', fontWeight: 800, marginTop: '16px' }}>Appointment Booked! 🎉</h2>
                 <p style={{ color: '#888', fontSize: '14px', marginTop: '8px' }}>{selectedWorker?.username} has been notified</p>
-                
+
                 <div style={{
                   background: 'rgba(0,180,216,0.04)', border: '1px solid rgba(0,180,216,0.1)',
                   borderRadius: '10px', padding: '16px', marginTop: '20px', textAlign: 'left'
@@ -814,10 +818,10 @@ const ClientDashboard = () => {
                     setShowBookingModal(false)
                     setBookingSuccess(false)
                     setBookingForm({
-                      jobDescription:'',
-                      preferredDate:'',
-                      preferredTime:'',
-                      address:''
+                      jobDescription: '',
+                      preferredDate: '',
+                      preferredTime: '',
+                      address: ''
                     })
                   }}
                   style={{

@@ -734,7 +734,7 @@ const Dashboard = () => {
   const fetchMyJobs = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://10.11.242.44:5000/api/jobs/myjobs', {
+      const res = await axios.get('https://gigfolio-production.up.railway.app//api/jobs/myjobs', {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -795,7 +795,7 @@ const Dashboard = () => {
       const fetchVerificationStatus = async () => {
         try {
           const token = localStorage.getItem('token');
-          const res = await axios.get('http://10.11.242.44:5000/api/verify/status', {
+          const res = await axios.get('https://gigfolio-production.up.railway.app//api/verify/status', {
             headers: { Authorization: `Bearer ${token}` }
           });
           setVerifyData(res.data);
@@ -812,7 +812,7 @@ const Dashboard = () => {
     setAadhaarMsg('');
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://10.11.242.44:5000/api/verify/aadhaar',
+      const res = await axios.post('https://gigfolio-production.up.railway.app/api/verify/aadhaar',
         { aadhaarNumber: aadhaarNum, fullName },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -830,7 +830,7 @@ const Dashboard = () => {
     setLicenseMsg('');
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://10.11.242.44:5000/api/verify/license',
+      const res = await axios.post('https://gigfolio-production.up.railway.app/api/verify/license',
         { licenseNumber: licenseNum },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -848,7 +848,7 @@ const Dashboard = () => {
     setPoliceMsg('');
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://10.11.242.44:5000/api/verify/police',
+      const res = await axios.post('https://gigfolio-production.up.railway.app/api/verify/police',
         { reportNumber: policeRef || 'AUTO' },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -880,7 +880,7 @@ const Dashboard = () => {
   };
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(`http://10.11.242.44:5173/review/${generatedJob.reviewToken}`);
+    navigator.clipboard.writeText(`https://gigfolio-production.up.railway.app/review/${generatedJob.reviewToken}`);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 2000);
   };
@@ -1878,7 +1878,7 @@ const Dashboard = () => {
                     </div>
 
                     <div style={{ marginTop: '16px', color: '#555555', fontSize: '11px', fontFamily: 'monospace', textAlign: 'center', wordBreak: 'break-all' }}>
-                      10.11.242.44:5173/review/{generatedJob.reviewToken}
+                      https://gigfolio-production.up.railway.app/review/{generatedJob.reviewToken}
                     </div>
 
                     <button onClick={handleCopyLink} style={{ background: 'rgba(0,255,136,0.08)', border: '1px solid rgba(0,255,136,0.2)', color: '#00ff88', borderRadius: '8px', padding: '10px 20px', fontSize: '13px', fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: '12px', transition: 'all 0.3s ease' }}>
